@@ -4,8 +4,7 @@ import "./App.css";
 import axios from "axios";
 //PAGES
 import { apiURL } from "./apiURL";
-import Navbar from "./Pages/Navbar"
-import Error from "./Pages/Error";
+import Navbar from "./Pages/Navbar
 import Index from "./Pages/Index";
 import New from "./Pages/New"
 import Show from "./Pages/Show";
@@ -75,7 +74,6 @@ function App() {
               
               <Route path="/transactions/:index"><Index transactions={transactions} deleteTransaction={deleteTransaction}/></Route>
               <Route path="/transactions"><Show transactions={transactions} /></Route>
-              <Route path="*"><Error /></Route>
             </Switch>
           </main>
         </div>
