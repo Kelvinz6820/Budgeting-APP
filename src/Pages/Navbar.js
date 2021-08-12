@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import "./Navbar.css";
 export default function NavBar() {
     return (
       <nav className="navbar">
@@ -7,6 +7,7 @@ export default function NavBar() {
             <button className="btn">
                 <NavLink to="/transactions" className="link">Transactions</NavLink>
             </button>
+            {"     "}
             <button className="btn">
                 <NavLink to="/transactions/new" className="link">New Transaction</NavLink>
             </button>

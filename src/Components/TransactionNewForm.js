@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { withRouter } from "react-router-dom";
-
+import "./TransactionNewForm.css"
 function TransactionNewForm(props) {
+
   const [transaction, setTransaction] = useState({
     name: "",
     date: "",
@@ -15,6 +16,8 @@ function TransactionNewForm(props) {
   };
 
 
+  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,17 +26,21 @@ function TransactionNewForm(props) {
   };
 
   return (
-    <div>
+    <div className="new-form">
       <h1>New Transaction</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="date">Date:</label>
         <input id="date" type="text" required value={transaction.date} placeholder="Month Date" onChange={handleChange}/>
-        <label htmlFor="name">Name:</label>
-        <input id="name" type="text" required value={transaction.name} placeholder="Name" onChange={handleChange}/>
+        <br></br>
+        <label htmlFor="name">Spent Item:</label>
+        <input id="name" type="text" required value={transaction.name} placeholder="Type negative values for gains" onChange={handleChange}/>
+        <br></br>
         <label htmlFor="from">From:</label>
         <input id="from" type="text" required value={transaction.from} placeholder="From" onChange={handleChange}/>
+        <br></br>
         <label htmlFor="amount">Amount:</label>
         <input id="amount" type="number" required value={transaction.amount} placeholder="Amount" onChange={handleChange}/>
+        <br></br>
         <input type="submit" className="btn"/>
       </form>
     </div>

@@ -9,6 +9,7 @@ import Error from "./Pages/Error";
 import Index from "./Pages/Index";
 import New from "./Pages/New"
 import Show from "./Pages/Show";
+import Update from "./Pages/Update"
 
 function App() {
 
@@ -37,7 +38,16 @@ function App() {
         }
       )
   };
-
+  const updateTransaction = (updatedTransaction, index) => {
+    axios.put(`${API}/transactions/${index}`, updatedTransaction)
+      .then(
+        (response) => {
+          const updatedTransaction = [...transactions];
+          updatedTransaction[index] = response.data.payload;
+          setTransactions(updatedTransaction);
+        }
+      );
+      }
   const deleteTransaction = (id) => {
     axios
       .delete(`${API}/transactions/${id}`)
@@ -60,7 +70,9 @@ function App() {
 
           <main>
             <Switch>
+              <Route path="/transactions/update/:index"><Update updateTransaction={updateTransaction} /></Route>
               <Route path="/transactions/new"><New addTransaction={addTransaction} /></Route>
+              
               <Route path="/transactions/:index"><Index transactions={transactions} deleteTransaction={deleteTransaction}/></Route>
               <Route path="/transactions"><Show transactions={transactions} /></Route>
               <Route path="*"><Error /></Route>

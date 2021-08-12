@@ -1,5 +1,6 @@
 import React from 'react'
 import Transaction from './Transaction'
+import "./Transactions.css"
 
 const Transactions = ({ transactions}) => {
 
