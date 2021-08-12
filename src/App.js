@@ -4,7 +4,7 @@ import "./App.css";
 import axios from "axios";
 //PAGES
 import { apiURL } from "./apiURL";
-import Navbar from "./Pages/Navbar
+import Navbar from "./Pages/Navbar";
 import Index from "./Pages/Index";
 import New from "./Pages/New"
 import Show from "./Pages/Show";
